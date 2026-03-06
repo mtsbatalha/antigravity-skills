@@ -6,6 +6,20 @@ Compatível com: Claude Code, Gemini CLI, GitHub Copilot, Cursor, e muito mais.
 
 ---
 
+## 📊 Status do Projeto
+
+| Métrica | Status |
+|---------|--------|
+| **Skills Disponíveis** | 1006+ ✅ |
+| **Versão** | 6.11.0 |
+| **Última Atualização** | Março 2026 |
+| **Licença** | MIT |
+| **Compatibilidade MCP** | ✅ Claude Desktop |
+| **Compatibilidade IDE** | ✅ VSCode, Cursor, Gemini |
+| **Status de Manutenção** | Ativo 🟢 |
+
+---
+
 ## 📚 Índice
 
 - [Instalação](#instalação)
@@ -20,7 +34,16 @@ Compatível com: Claude Code, Gemini CLI, GitHub Copilot, Cursor, e muito mais.
 
 ---
 
-## 🚀 Instalação
+## � Links Rápidos
+
+- 📦 **Instalar**: `npx antigravity-awesome-skills`
+- 🌐 **GitHub**: https://github.com/mtsbatalha/antigravity-skills
+- 💬 **Comunidade**: Discussões abertas para sugestões
+- 📧 **Suporte**: Veja [FAQ.md](docs/FAQ.md) ou abra uma issue
+
+---
+
+## 🎯 Para Começar (3 passos)
 
 ### Opção 1: Instalação Global (Recomendado)
 
@@ -429,6 +452,41 @@ Se este projeto te ajuda, considera apoiar:
 
 ---
 
-**Versão:** 6.10.0  
+**Versão:** 6.11.0  
 **Última atualização:** Março 2026  
 **Mantido por:** Antigravity Community
+
+---
+
+## 📈 Estatísticas e Métricas
+
+- **1006+** Skills disponíveis e testadas
+- **20+** Categorias de skills organizadas
+- **15+** Bundles pré-configurados por função
+- **8+** Assistentes IA suportados (Claude, Gemini, Cursor, etc.)
+- **MCP** Model Context Protocol suportado
+- **Web App** Interface de exploração interativa
+
+---
+
+## 🆘 Precisa de Ajuda?
+
+### Documentação Rápida
+- 📖 **Guia de Uso**: [docs/USAGE.md](docs/USAGE.md)
+- 🔌 **MCP Setup**: [docs/MCP_SETUP.md](docs/MCP_SETUP.md)
+- ❓ **FAQ**: [docs/FAQ.md](docs/FAQ.md)
+- 🚀 **Primeiros Passos**: [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md)
+
+### Reportar Problemas
+- 🐛 [Abra uma Issue](https://github.com/mtsbatalha/antigravity-skills/issues)
+- 💬 [Discussões](https://github.com/mtsbatalha/antigravity-skills/discussions)
+- 📬 Ou consulte [COMMUNITY_GUIDELINES.md](docs/COMMUNITY_GUIDELINES.md)
+
+---
+
+## 🚀 Próximos Passos Recomendados
+
+1. **Novo Usuário?** → Leia [GETTING_STARTED.md](docs/GETTING_STARTED.md)
+2. **Quer usar MCP?** → Veja [docs/MCP_SETUP.md](docs/MCP_SETUP.md)
+3. **Desenvolvedor?** → Confira [SKILL_ANATOMY.md](docs/SKILL_ANATOMY.md) e [CONTRIBUTING.md](CONTRIBUTING.md)
+4. **CI/CD?** → Explore [scripts/](scripts/) para automação
