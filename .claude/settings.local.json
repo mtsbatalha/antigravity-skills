@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \":*)",
+      "Bash(python scripts/auto_activate.py --stack react typescript next tailwindcss prisma postgres docker --dry-run)"
+    ]
+  }
+}
