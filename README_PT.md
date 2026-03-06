@@ -12,7 +12,10 @@ Compatível com: Claude Code, Gemini CLI, GitHub Copilot, Cursor, e muito mais.
 - [Como Usar](#como-usar)
 - [Bundles Recomendados](#bundles-recomendados)
 - [Estrutura do Projeto](#estrutura-do-projeto)
+- [Explorar Skills](#explorar-skills)
+- [Scripts de Desenvolvimento](#-scripts-de-desenvolvimento)
 - [Documentação Completa](#documentação-completa)
+- [Solução de Problemas](#-solução-de-problemas)
 
 ---
 
@@ -169,6 +172,125 @@ npm run dev
 ```
 
 Isso abre uma interface web para explorar as skills interativamente.
+
+---
+
+## ⚙️ Scripts de Desenvolvimento
+
+Os scripts auxiliam na manutenção, validação e construção do catálogo de skills.
+
+### 📋 Scripts Disponíveis
+
+#### Validação e Qualidade
+
+```bash
+# Validar todas as skills
+npm run validate
+
+# Modo strict (mais rigoroso)
+npm run validate:strict
+
+# Rodar suite de testes
+npm run test
+
+# Testes com conexão de rede
+npm run test:network
+```
+
+#### Índices e Catálogos
+
+```bash
+# Regenerar índice de skills
+npm run index
+
+# Construir catálogo JSON
+npm run catalog
+
+# Pipeline completo: validar + gerar índice + atualizar README
+npm run chain
+
+# Build final (com todas as validações)
+npm run build
+```
+
+#### Sincronização
+
+```bash
+# Sincronizar skills oficiais da Microsoft
+npm run sync:microsoft
+
+# Sincronizar todas as oficial skills (Microsoft + cadeia completa)
+npm run sync:all-official
+
+# Atualizar skills customizadas
+npm run update:skills
+```
+
+#### Aplicação Web
+
+```bash
+# Setup da aplicação web
+npm run app:setup
+
+# Instalar dependências da web app
+npm run app:install
+
+# Rodar em modo desenvolvimento
+npm run app:dev
+
+# Build da aplicação
+npm run app:build
+
+# Preview for build
+npm run app:preview
+```
+
+### 🔄 Workflow Recomendado para Contribuições
+
+Se você está adicionando novas skills:
+
+```bash
+# 1. Validar suas novas skills
+npm run validate:strict
+
+# 2. Gerar índices atualizados
+npm run index
+
+# 3. Construir catálogo
+npm run catalog
+
+# 4. Rodar testes
+npm run test:local
+
+# 5. Se tudo passou, fazer commit e push
+git add .
+git commit -m "Add new skills"
+git push
+```
+
+### 📊 Script Detalhados
+
+| Script | Arquivo | Função |
+|--------|---------|--------|
+| **validate** | `validate_skills.py` | Valida estrutura YAML das skills |
+| **index** | `generate_index.py` | Gera arquivo de índice JSON |
+| **catalog** | `build-catalog.js` | Constrói catálogo otimizado |
+| **sync:microsoft** | `sync_microsoft_skills.py` | Sincroniza skills oficiais |
+| **readme** | `update_readme.py` | Atualiza seções automáticas do README |
+| **test** | `run-test-suite.js` | Executa testes completos |
+
+### 🛠️ Scripts Utilitários
+
+```bash
+# Scripts auxiliares em scripts/
+scripts/auto_activate.py           # Ativar skills automaticamente
+scripts/auto_categorize_skills.py # Categorizar skills
+scripts/fix_dangling_links.py      # Corrigir links quebrados
+scripts/fix_skills_metadata.py     # Corrigir metadados
+scripts/generate_skills_report.py  # Gerar relatório de skills
+scripts/manage_skill_dates.py      # Gerenciar datas de skills
+scripts/sync_recommended_skills.sh # Sincronizar skills recomendadas
+```
 
 ---
 
