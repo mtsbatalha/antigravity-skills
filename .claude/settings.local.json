@@ -3,7 +3,13 @@
     "allow": [
       "Bash(python3 -c \":*)",
       "Bash(python -c \":*)",
-      "Bash(python scripts/auto_activate.py --stack react typescript next tailwindcss prisma postgres docker --dry-run)"
+      "Bash(python scripts/auto_activate.py --stack react typescript next tailwindcss prisma postgres docker --dry-run)",
+      "Bash(pip show mcp)",
+      "Bash(pip show pydantic)",
+      "Bash(pip install mcp)",
+      "Bash(npm install)",
+      "Bash(npm run catalog)",
+      "Read(//c/Users/Mateus/.claude/**)"
     ]
   }
 }

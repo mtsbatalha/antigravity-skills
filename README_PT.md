@@ -13,6 +13,7 @@ Compatível com: Claude Code, Gemini CLI, GitHub Copilot, Cursor, e muito mais.
 - [Bundles Recomendados](#bundles-recomendados)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Explorar Skills](#explorar-skills)
+- [MCP Integration](#-mcp-model-context-protocol)
 - [Scripts de Desenvolvimento](#-scripts-de-desenvolvimento)
 - [Documentação Completa](#documentação-completa)
 - [Solução de Problemas](#-solução-de-problemas)
@@ -143,6 +144,7 @@ Bundles são coleções recomendadas de skills por função/role:
 | Documento | Descrição |
 |-----------|-----------|
 | [USAGE.md](docs/USAGE.md) | **Comece aqui!** Guia completo de como usar |
+| [MCP_SETUP.md](docs/MCP_SETUP.md) | 🔌 Integração com Claude Desktop via MCP |
 | [BUNDLES.md](docs/BUNDLES.md) | Coleções recomendadas por função |
 | [GETTING_STARTED.md](docs/GETTING_STARTED.md) | Primeiros passos |
 | [FAQ.md](docs/FAQ.md) | Perguntas frequentes |
@@ -172,6 +174,50 @@ npm run dev
 ```
 
 Isso abre uma interface web para explorar as skills interativamente.
+
+---
+
+## 🔌 MCP (Model Context Protocol)
+
+Use Antigravity Skills diretamente no **Claude Desktop** e outras ferramentas compatíveis com MCP.
+
+### ⚡ Quick Setup
+
+```bash
+# 1. Instalar MCP
+pip install mcp
+
+# 2. Adicionar ao Claude Desktop config (~/.config/Claude/claude_desktop_config.json)
+{
+  "mcpServers": {
+    "skills": {
+      "command": "python",
+      "args": ["/caminho/para/antigravity-skills/mcp/skills_mcp.py"],
+      "env": {}
+    }
+  }
+}
+
+# 3. Reiniciar Claude Desktop
+```
+
+### 💡 Usar no Claude Desktop
+
+Basta conversar naturalmente:
+
+```
+"Use a skill de testes para JavaScript"
+"Encontre skills relacionadas a React"
+"Execute @security-audit neste código"
+```
+
+### 📖 Documentação Completa
+
+👉 Veja [docs/MCP_SETUP.md](docs/MCP_SETUP.md) para:
+- Instalação detalhada
+- Configuração avançada  
+- Troubleshooting
+- Ambientes customizados
 
 ---
 
