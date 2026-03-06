@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "skills": {
+      "command": "python",
+      "args": ["C:/Users/Mateus/Desktop/Projetos/antigravity-skills/mcp/skills_mcp.py"]
+    }
+  }
+}

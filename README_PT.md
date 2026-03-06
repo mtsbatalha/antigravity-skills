@@ -181,25 +181,36 @@ Isso abre uma interface web para explorar as skills interativamente.
 
 Use Antigravity Skills diretamente no **Claude Desktop** e outras ferramentas compatíveis com MCP.
 
-### ⚡ Quick Setup
+### ⚡ Quick Setup (2 minutos)
 
+**Passo 1**: Copie o arquivo de exemplo
 ```bash
-# 1. Instalar MCP
-pip install mcp
+cp .mcp.json.example ~/.claude/.mcp.json
+```
 
-# 2. Adicionar ao Claude Desktop config (~/.config/Claude/claude_desktop_config.json)
+**Passo 2**: Edite o caminho (se necessário)
+```json
 {
   "mcpServers": {
     "skills": {
       "command": "python",
-      "args": ["/caminho/para/antigravity-skills/mcp/skills_mcp.py"],
-      "env": {}
+      "args": ["C:/Users/Mateus/Desktop/Projetos/antigravity-skills/mcp/skills_mcp.py"]
     }
   }
 }
-
-# 3. Reiniciar Claude Desktop
 ```
+
+**Passo 3**: Reinicie Claude Desktop
+
+Pronto! ✅ As skills estarão disponíveis.
+
+### 📍 Caminhos do Arquivo `.mcp.json`
+
+| Sistema | Localização |
+|---------|-------------|
+| **Windows** | `%APPDATA%\Claude\claude_desktop_config.json` |
+| **macOS** | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| **Linux** | `~/.config/Claude/claude_desktop_config.json` |
 
 ### 💡 Usar no Claude Desktop
 
@@ -209,15 +220,30 @@ Basta conversar naturalmente:
 "Use a skill de testes para JavaScript"
 "Encontre skills relacionadas a React"
 "Execute @security-audit neste código"
+"Quais skills você tem disponíveis?"
+```
+
+Claude automaticamente usará as skills via MCP!
+
+### 🔧 Arquivo Incluído
+
+Usamos o arquivo `.mcp.json.example` como referência. Para sua máquina:
+
+```bash
+# Windows PowerShell
+Copy-Item .mcp.json.example $env:APPDATA/Claude/claude_desktop_config.json
+
+# macOS/Linux
+cp .mcp.json.example ~/Library/Application\ Support/Claude/claude_desktop_config.json
 ```
 
 ### 📖 Documentação Completa
 
 👉 Veja [docs/MCP_SETUP.md](docs/MCP_SETUP.md) para:
-- Instalação detalhada
-- Configuração avançada  
-- Troubleshooting
-- Ambientes customizados
+- Instalação detalhada passo-a-passo
+- Configuração avançada e múltiplos servidores
+- Troubleshooting para problemas comuns
+- Variáveis de ambiente customizadas
 
 ---
 
