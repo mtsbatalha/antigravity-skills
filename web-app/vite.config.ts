@@ -5,4 +5,8 @@ import refreshSkillsPlugin from './refresh-skills-plugin.js';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), refreshSkillsPlugin()],
+  server: {
+    host: true,
+    port: 3000,
+  },
 });
