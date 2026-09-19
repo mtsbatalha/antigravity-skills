@@ -165,7 +165,7 @@ export function SkillDetail(): React.ReactElement {
             Interactive Prompt Builder (Optional)
           </label>
           <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">
-            Add specific details below (e.g. &quot;Use React 19 and Tailwind&quot;). The &quot;Copy Prompt&quot; button will automatically attach your context.
+            Add specific details below (e.g. &quot;Use React 19 and Tailwind&quot;). The &quot;Copy @Skill&quot; and &quot;Copy Full Content&quot; buttons include your context automatically.
           </p>
           <textarea
             id="context"
