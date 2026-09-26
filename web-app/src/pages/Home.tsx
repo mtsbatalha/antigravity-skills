@@ -34,7 +34,10 @@ export function Home(): React.ReactElement {
       const lowerSearch = debouncedSearch.toLowerCase();
       result = result.filter(skill =>
         skill.name.toLowerCase().includes(lowerSearch) ||
-        skill.description.toLowerCase().includes(lowerSearch)
+        skill.description.toLowerCase().includes(lowerSearch) ||
+        skill.category.toLowerCase().includes(lowerSearch) ||
+        (skill.source || '').toLowerCase().includes(lowerSearch) ||
+        skill.id.toLowerCase().includes(lowerSearch)
       );
     }
 
@@ -124,7 +127,7 @@ export function Home(): React.ReactElement {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-4 md:flex-row md:items-center md:space-x-4 md:space-y-0 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-40">
+        <div className="flex flex-col space-y-4 md:flex-row md:items-center md:space-x-4 md:space-y-0 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm sticky top-14 z-40">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
             <input
@@ -170,6 +173,11 @@ export function Home(): React.ReactElement {
       </div>
 
       <div className="flex-1 -mx-4 sm:-mx-6 lg:-mx-8">
+        {!loading && filteredSkills.length > 0 && (debouncedSearch || categoryFilter !== 'all') && (
+          <p className="px-4 pb-4 text-sm text-slate-500 dark:text-slate-400 sm:px-6 lg:px-8">
+            Showing {filteredSkills.length} of {skills.length} skills
+          </p>
+        )}
         {loading ? (
           <div data-testid="loader" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-4 sm:px-6 lg:px-8">
             {[...Array(8)].map((_, i) => (
