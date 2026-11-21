@@ -97,6 +97,51 @@ describe('Home', () => {
       });
     });
 
+    it('should match skills by category keyword in search', async () => {
+      const mockSkills = [
+        createMockSkill({ id: 's1', category: 'frontend', name: 'Component Docs' }),
+        createMockSkill({ id: 's2', category: 'backend', name: 'API Docs' }),
+      ];
+
+      (useSkills as Mock).mockReturnValue({
+        skills: mockSkills,
+        stars: {},
+        loading: false,
+      });
+
+      renderWithRouter(<Home />, { useProvider: false });
+
+      const searchInput = screen.getByLabelText(/Search skills/i);
+      fireEvent.change(searchInput, { target: { value: 'frontend' } });
+
+      await waitFor(() => {
+        expect(screen.getByText('@Component Docs')).toBeInTheDocument();
+        expect(screen.queryByText('@API Docs')).not.toBeInTheDocument();
+      });
+    });
+
+    it('should show filtered result count while searching', async () => {
+      const mockSkills = [
+        createMockSkill({ id: 'react', name: 'React Patterns' }),
+        createMockSkill({ id: 'vue', name: 'Vue Basics' }),
+      ];
+
+      (useSkills as Mock).mockReturnValue({
+        skills: mockSkills,
+        stars: {},
+        loading: false,
+      });
+
+      renderWithRouter(<Home />, { useProvider: false });
+
+      const searchInput = screen.getByLabelText(/Search skills/i);
+      fireEvent.change(searchInput, { target: { value: 'React' } });
+
+      await waitFor(() => {
+        expect(screen.getByText('Showing 1 of 2 skills')).toBeInTheDocument();
+      });
+    });
+
     it('should filter skills by category', async () => {
       const mockSkills = [
         createMockSkill({ id: 's1', category: 'frontend', name: 'Frontend Skill' }),

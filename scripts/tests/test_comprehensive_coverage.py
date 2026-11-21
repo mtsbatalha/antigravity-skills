@@ -132,10 +132,27 @@ def analyze_skill_locations():
         print("\n4️⃣ Flat Name Uniqueness Check:")
         print("-" * 60)
 
+        # The sync (scripts/sync_microsoft_skills.py) skips .github/skills/<name>
+        # entries whose name is already provided by .github/plugins/<name>.
+        # Mirror that dedupe so upstream duplicating a plugin skill under
+        # .github/skills does not fail the check.
+        plugin_dir_names = {
+            skill_file.parent.name
+            for skill_file in all_skill_files
+            if ".github/plugins/" in skill_file.as_posix()
+        }
+
         name_map: dict[str, list[str]] = {}
         missing_names = []
 
         for skill_file in all_skill_files:
+            path_str = skill_file.as_posix()
+            if (
+                ".github/skills/" in path_str
+                and skill_file.parent.name in plugin_dir_names
+            ):
+                continue
+
             try:
                 rel = skill_file.parent.relative_to(repo_path)
             except ValueError:
