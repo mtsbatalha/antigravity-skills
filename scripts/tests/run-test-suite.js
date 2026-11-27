@@ -6,6 +6,7 @@ const NETWORK_TEST_ENV = "ENABLE_NETWORK_TESTS";
 const ENABLED_VALUES = new Set(["1", "true", "yes", "on"]);
 const LOCAL_TEST_COMMANDS = [
   ["scripts/tests/validate_skills_headings.test.js"],
+  ["scripts/tests/test_bin_install_security.js"],
   ["scripts/run-python.js", "scripts/tests/test_validate_skills_headings.py"],
 ];
 const NETWORK_TEST_COMMANDS = [
